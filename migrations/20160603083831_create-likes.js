@@ -1,16 +1,17 @@
 exports.up = function (knex, Promise) {
-  console.log('Creating likes')
-  return knex.schema.createTableIfNotExists('likes', function (table) {
+  console.log('Creating likesTBL')
+  return knex.schema.createTableIfNotExists('likesTBL', function (table) {
     table.increments('id').primary()
-    table.string('likes')
+    table.string('like')
+    table.integer('user_id').references('users.id')
       // if creating a foreign key
       // table.integer('sundae.id').references('sundaes.id')
   })
 }
 
 exports.down = function (knex, Promise) {
-  console.log('Dropping likes')
-  return knex.schema.dropTableIfExists('likes').then(function () {
-    console.log('likes table was dropped')
+  console.log('Dropping likesTBL')
+  return knex.schema.dropTableIfExists('likesTBL').then(function () {
+    console.log('likesTBL table was dropped')
   })
 }
