@@ -12,12 +12,12 @@ exports.seed = function (knex, Promise) {
     knex('users').insert({
       firstName: 'Rich',
       lastName: 'Churcher',
-      username: ''
+      username: 'git '
     }),
     knex('users').insert({
-      firstName: 'firstNameValue',
-      lastName: 'lastNameValue',
-      username: 'username'
+      firstName: 'Timothy',
+      lastName: 'Hawkins',
+      username: 'usernametim'
     })
   );
 };
