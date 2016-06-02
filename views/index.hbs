@@ -1,1 +1,9 @@
 {{> header}}
+<div class="users">
+  {{#each users}}
+    <ul>
+      <li>{{firstName}} {{lastName}}</li>
+      <li>{{username}}</li>
+    </ul>
+  {{/each}}
+</div>
