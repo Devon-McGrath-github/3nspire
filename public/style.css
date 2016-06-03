@@ -71,3 +71,7 @@ input {
 .center {
   text-align: center;
 }
+
+.nope {
+  margin: auto;
+}

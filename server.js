@@ -25,6 +25,7 @@ app.get('/', routes.home)
 app.get('/contacts', routes.contacts)
 app.get('/about', routes.about)
 app.get('/github', routes.github)
+app.get('/signIn', routes.signIn)
 
 app.get('/create', routes.create)
 

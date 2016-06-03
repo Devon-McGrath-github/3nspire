@@ -13,7 +13,8 @@ module.exports = {
   contacts: contacts,
   about: about,
   github: github,
-  getLikes: getLikes
+  getLikes: getLikes,
+  signIn: signIn
 }
 
 function home(req, res) {
@@ -161,9 +162,16 @@ function github(req, res) {
     layout: 'main',
     title: 'Github'
   }
-  res.render('about', model)
+  res.render('github', model)
 }
 
+function signIn(req, res) {
+  var model = {
+    layout: 'main',
+    title: 'Sign In'
+  }
+  res.render('signIn', model)
+}
 
 
 function getLikes(req, res) {
