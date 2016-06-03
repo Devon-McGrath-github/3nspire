@@ -1,11 +1,27 @@
-<form class="create-form" action="/add" method="post">
-  <!-- <input type="hidden" name="name" value="{{id}}"> -->
-  <input type="input" name="firstName" placeholder="First Name">
-  <input type="input" name="lastName" placeholder="Last Name">
-  <input type="input" name="username" placeholder="Username">
-  <button class="button" type="submit">Create</button>
-</form>
-<form action="/updateData" method="post">
-  <input type="hidden" name="rowID" value={{id}}>
-  <button class="button" type="submit" name="update">Update</button>
-</form>
+
+<div class="spacer">
+
+</div>
+
+<h2 class="friends">Enter New User</h2>
+<div class="users">
+
+  <div class="get-index">
+
+  <!-- <p>Name: {{firstName}} {{lastName}} {{id}} </p> -->
+  <form class="create-form" action="/add" method="post">
+    <!-- <input type="hidden" name="name" value="{{id}}"> -->
+    <input type="input" name="firstName" placeholder="First Name">
+    <input type="input" name="lastName" placeholder="Last Name">
+    <input type="input" name="username" placeholder="Username">
+    <button class="button" type="submit">Create</button>
+  </form>
+
+</div>
+
+</div>
+
+
+  <div class="create-index">
+    <a href="/"><button>Home</button></a>
+  </div>

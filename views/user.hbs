@@ -1,7 +1,17 @@
 
 
+
 {{#each users}}
-  <p>Name: {{firstName}} {{lastName}} {{id}} </p>
+
+<h2 class="friends">{{firstName}} {{lastName}}</h2>
+<h4 class="nickname"> AKA "{{username}}"</h4>
+
+<div class="users">
+
+  <div class="get-index">
+
+  <!-- <p>Name: {{firstName}} {{lastName}} {{id}} </p> -->
+
   <form action="/del" method="post">
     <input type="hidden" name="rowID" value={{id}}>
     <button class="button-primary" type="submit" name="delete">Delete</button>
@@ -13,5 +23,12 @@
     <input type="input" name="username" placeholder={{username}}>
     <button>Update</button>
   </form>
+</div>
 
 {{/each}}
+</div>
+
+
+  <div class="create-index">
+    <a href="/"><button>Home</button></a>
+  </div>

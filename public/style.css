@@ -46,3 +46,23 @@ li, a:hover {
   text-align: center;
   margin-top: 5%;
 }
+
+.nickname {
+  text-align: center;
+}
+
+.get-index {
+  text-align: center;
+}
+
+.create-index {
+  text-align: center;
+}
+
+input {
+  height: 32px;
+}
+
+.spacer {
+  height: 150px;
+}

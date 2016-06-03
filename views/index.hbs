@@ -1,6 +1,15 @@
 
 
+<h2 class="friends">Friends of Enspiral</h2>
+
 <div class="users">
+  <div class="get-index">
+    <form action="/user" method="post">
+      <input name="userID" value="">
+      <button> Get User Profile by ID</button>
+    </form>
+  </div>
+
   <table align="center">
     <tr>
       <th>
@@ -25,12 +34,10 @@
         <td>{{username}}</td>
       </tr>
     {{/each}}
-    <a href="/create"><button>Create User</button></a>
-
-    <form action="/user" method="post">
-      <input name="userID" value="">
-      <button> Get User Profile by ID</button>
-    </form>
-
   </table>
+
+  <div class="create-index">
+    <a href="/create"><button>Create User</button></a>
+  </div>
+
 </div>
