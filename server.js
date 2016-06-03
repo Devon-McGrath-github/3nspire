@@ -30,7 +30,7 @@ app.post('/add', routes.addUser)
 
 app.post('/addData', routes.addData)
 app.post('/del', routes.del)
-
+app.post('/update', routes.update)
 
 app.listen(PORT, function () {
   console.log('Listening for aliens on port: ', PORT);

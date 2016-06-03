@@ -6,3 +6,7 @@
   <input type="input" name="username" placeholder="Username">
   <button class="button" type="submit">Create</button>
 </form>
+<form action="/updateData" method="post">
+  <input type="hidden" name="rowID" value={{id}}>
+  <button class="button" type="submit" name="update">Update</button>
+</form>

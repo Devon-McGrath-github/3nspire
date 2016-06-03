@@ -6,4 +6,12 @@
     <input type="hidden" name="rowID" value={{id}}>
     <button class="button-primary" type="submit" name="delete">Delete</button>
   </form>
+  <form action="/update" method="post">
+    <input type="hidden" name="userId" value={{id}}>
+    <input type="input" name="firstName" placeholder={{firstName}}>
+    <input type="input" name="lastName" placeholder={{lastName}}>
+    <input type="input" name="username" placeholder={{username}}>
+    <button>Update</button>
+  </form>
+
 {{/each}}

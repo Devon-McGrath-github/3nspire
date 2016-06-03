@@ -8,7 +8,8 @@ module.exports = {
   addUser: addUser,
   addData: addData,
   user: user,
-  del: del
+  del: del,
+  update: update
 }
 
 function home(req, res) {
@@ -77,20 +78,6 @@ function addUser(req, res) {
     })
 }
 
-// insert({
-//     username: uName,
-//     firstName: fName,
-//     lastName: lName
-//   })
-//   .into('users')
-//   .then(function () {
-//     console.log('testing add user')
-//     res.render('add')
-//   })
-//   .catch(function () {
-//     console.log(err.message);
-//   })
-
 function addData(req, res) {
   var userFirstName = req.body.firstName
   var userLastName = req.body.lastName
@@ -101,16 +88,8 @@ function addData(req, res) {
       lastName: userLastName,
       username: userUsername
     })
-    .then(function (response) {})
-    .catch(function (error) {
-      console.error(error)
-    })
-  knex('users')
-    .then(function (data) {
-      var model = {
-        users: data
-      }
-      res.redirect('index', model)
+    .then(function (response) {
+      res.redirect('index')
     })
     .catch(function (error) {
       console.error(error)
@@ -125,6 +104,28 @@ function del(req, res) {
     .del()
     .then(function () {
       console.log('you dont console log');
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+}
+
+function update(req, res) {
+  var userFirstName = req.body.firstName
+  var userLastName = req.body.lastName
+  var userUsername = req.body.username
+  var userID = Number(req.body.userId)
+  knex('users')
+    .where({
+      id: userID
+    })
+    .update({
+      firstName: userFirstName,
+      lastName: userLastName,
+      username: userUsername
+    })
+    .then(function (response) {
+      // res.redirect('index')
     })
     .catch(function (error) {
       console.log(error);
