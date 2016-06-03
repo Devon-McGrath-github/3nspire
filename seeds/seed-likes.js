@@ -7,19 +7,27 @@ exports.seed = function (knex, Promise) {
     // Inserts seed entries
     knex('likesTBL').insert({
       like: 'soccer',
-      user_id: 10
+      user_id: 1
     }),
     knex('likesTBL').insert({
       like: 'tennis',
-      user_id: 11
+      user_id: 2
     }),
     knex('likesTBL').insert({
       like: 'soccer',
-      user_id: 12
+      user_id: 3
     }),
     knex('likesTBL').insert({
       like: 'baseball',
-      user_id: 11
+      user_id: 1
+    }),
+    knex('likesTBL').insert({
+      like: 'soccer',
+      user_id: 2
+    }),
+    knex('likesTBL').insert({
+      like: 'tennis',
+      user_id: 3
     })
   );
 };

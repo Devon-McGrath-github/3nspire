@@ -1,0 +1,29 @@
+<h2 class="friends">Friends of Enspiral</h2>
+
+<div class="users">
+  <div class="get-index">
+  </div>
+
+
+<div class="likes-table center">
+
+  <h5>{{users.1.firstName}} {{users.1.lastName}}</h5>
+
+</div>
+
+
+
+  <table align="center">
+    <tr>
+      <th>
+        Likes
+      </th>
+
+    {{#each users}}
+      <tr>
+        <td>{{like}}</td>
+      </tr>
+    {{/each}}
+  </table>
+
+</div>

@@ -12,7 +12,8 @@ module.exports = {
   update: update,
   contacts: contacts,
   about: about,
-  github: github
+  github: github,
+  getLikes: getLikes
 }
 
 function home(req, res) {
@@ -29,11 +30,11 @@ function home(req, res) {
 }
 
 function user(req, res) {
-  var user_id = req.body.userID
-  knex.select()
-    .table('users')
+  var userIdentity = req.body.userID
+  knex('users')
+    // .table('users')
     .where({
-      id: user_id
+      id: userIdentity
     })
     .then(function (data) {
       var model = {
@@ -161,4 +162,25 @@ function github(req, res) {
     title: 'Github'
   }
   res.render('about', model)
+}
+
+
+
+function getLikes(req, res) {
+  var userIdentity = Number(req.body.userId)
+  knex('users')
+    .join('likesTBL', 'users.id', '=', 'likesTBL.user_id')
+    // .select('users.id', 'users.firstName', 'likesTBL.like')
+    .where('users.id', userIdentity)
+    .then(function (data) {
+      var model = {
+        layout: 'main',
+        users: data,
+        title: 'User Likes'
+      }
+      res.render('getLikes', model)
+    })
+    .catch(function (error) {
+      console.log(error)
+    })
 }

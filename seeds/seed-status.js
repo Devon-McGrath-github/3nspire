@@ -6,15 +6,15 @@ exports.seed = function (knex, Promise) {
     // Inserts seed entries
     knex('status').insert({
       status: 'Im pretty happy today',
-      user_id: 10
+      user_id: 1
     }),
     knex('status').insert({
-      status: 'Im pretty happy today2',
-      user_id: 11
+      status: 'Im very happy today',
+      user_id: 2
     }),
     knex('status').insert({
-      status: 'Im pretty happy today3',
-      user_id: 12
+      status: 'Im extatic today',
+      user_id: 3
     })
   );
 };

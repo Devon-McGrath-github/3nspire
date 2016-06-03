@@ -11,7 +11,7 @@ exports.up = function (knex, Promise) {
 }
 
 exports.down = function (knex, Promise) {
-  console.log('Dropping likesTBL')
+  console.log('Dropping likes')
   return knex.schema.dropTableIfExists('likesTBL').then(function () {
     console.log('likesTBL table was dropped')
   })

@@ -3,7 +3,7 @@
 
 {{#each users}}
 
-<h2 class="friends">{{firstName}} {{lastName}}</h2>
+<h1 class="friends">{{firstName}} {{lastName}}</h1>
 <h4 class="nickname"> AKA "{{username}}"</h4>
 
 <div class="users">
@@ -25,10 +25,19 @@
   </form>
 </div>
 
-{{/each}}
 </div>
 
 
   <div class="create-index">
-    <a href="/"><button>Home</button></a>
+
+
+    <form action="/getLikes" method="post">
+      <input type="hidden" name="userId" value={{id}}>
+      <!-- <input type="input" name="firstName" placeholder={{firstName}}>
+      <input type="input" name="lastName" placeholder={{lastName}}>
+      <input type="input" name="username" placeholder={{username}}> -->
+      <button>Get likes</button>
+    </form>
   </div>
+
+  {{/each}}

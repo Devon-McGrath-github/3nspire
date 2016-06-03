@@ -49,6 +49,7 @@ li, a:hover {
 
 .nickname {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .get-index {
@@ -65,4 +66,8 @@ input {
 
 .spacer {
   height: 150px;
+}
+
+.center {
+  text-align: center;
 }
