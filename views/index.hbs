@@ -1,9 +1,13 @@
 {{> header}}
 <div class="users">
-  {{#each users}}
-    <ul>
-      <li>{{firstName}} {{lastName}}</li>
-      <li>{{username}}</li>
-    </ul>
-  {{/each}}
+  <table align="center">
+    {{#each users}}
+      <tr>
+        <td>{{image}}<td>
+        <td>{{firstName}}</td>
+        <td>{{lastName}}</td>
+      </tr>
+    {{/each}}
+    <a href="/create">Create User</a>
+  </table>
 </div>

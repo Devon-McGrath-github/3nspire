@@ -9,9 +9,6 @@ var app = express()
 
 var PORT = process.env.PORT || 3000
 
-app.get('/', routes.home)
-
-
 app.use(bodyParser.urlencoded({
   urlencoded: true
 }))
@@ -21,6 +18,16 @@ app.engine('hbs', hbs({
 }))
 app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname, 'views'))
+
+
+
+app.get('/', routes.home)
+app.get('/create', routes.create)
+
+app.post('/add', routes.addUser)
+
+app.post('/addData', routes.addData)
+
 
 app.listen(PORT, function () {
   console.log('Listening for aliens on port: ', PORT);
