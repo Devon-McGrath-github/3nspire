@@ -10,7 +10,8 @@ module.exports = {
   user: user,
   del: del,
   update: update,
-  contacts: contacts
+  contacts: contacts,
+  about: about
 }
 
 function home(req, res) {
@@ -143,5 +144,14 @@ function contacts(req, res) {
     title: 'Contacts'
   }
   res.render('contact', model)
+
+}
+
+function about(req, res) {
+  var model = {
+    layout: 'main',
+    title: 'About Us'
+  }
+  res.render('about', model)
 
 }

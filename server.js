@@ -23,6 +23,8 @@ app.set('views', path.join(__dirname, 'views'))
 
 app.get('/', routes.home)
 app.get('/contacts', routes.contacts)
+app.get('/about', routes.about)
+
 
 app.get('/create', routes.create)
 
