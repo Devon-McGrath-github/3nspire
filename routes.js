@@ -11,7 +11,8 @@ module.exports = {
   del: del,
   update: update,
   contacts: contacts,
-  about: about
+  about: about,
+  github: github
 }
 
 function home(req, res) {
@@ -144,7 +145,6 @@ function contacts(req, res) {
     title: 'Contacts'
   }
   res.render('contact', model)
-
 }
 
 function about(req, res) {
@@ -153,5 +153,12 @@ function about(req, res) {
     title: 'About Us'
   }
   res.render('about', model)
+}
 
+function github(req, res) {
+  var model = {
+    layout: 'main',
+    title: 'Github'
+  }
+  res.render('about', model)
 }
