@@ -18,7 +18,8 @@ function home(req, res) {
     .then(function (data) {
       var model = {
         layout: 'main',
-        users: data
+        users: data,
+        title: 'Home'
       }
       res.render('index', model)
     })
@@ -34,7 +35,8 @@ function user(req, res) {
     .then(function (data) {
       var model = {
         layout: 'main',
-        users: data
+        users: data,
+        title: 'User Info'
       }
       res.render('user', model)
     })
@@ -42,7 +44,8 @@ function user(req, res) {
 
 function create(req, res) {
   var model = {
-    layout: 'main'
+    layout: 'main',
+    title: 'Create New'
   }
   res.render('create', model)
 
@@ -69,7 +72,8 @@ function addUser(req, res) {
     .then(function (data) {
       var model = {
         users: data,
-        layout: 'main'
+        layout: 'main',
+        title: 'Add New'
       }
       res.render('index', model)
     })
