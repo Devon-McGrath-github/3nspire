@@ -4,8 +4,6 @@ body, html {
 
 h4 {
   margin: 0;
-
-
 }
 
 .nav-menu {
@@ -18,7 +16,7 @@ h4 {
 
 .logo {
   float: left;
-  font-size: 30px;
+  font-size: 45px;
 }
 
 ul {
@@ -41,5 +39,10 @@ li, a:hover {
 }
 
 .users {
-  margin-top: 300px;
+  margin-top: 0;
+}
+
+.friends {
+  text-align: center;
+  margin-top: 5%;
 }

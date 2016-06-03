@@ -2,15 +2,30 @@
 
 <div class="users">
   <table align="center">
+    <tr>
+      <th>
+        ID number
+      </th>
+      <th>
+        First Name
+      </th>
+      <th>
+        Last Name
+      </th>
+      <th>
+        Username
+      </th>
+    </tr>
+
     {{#each users}}
       <tr>
-        <td>{{image}}<td>
+        <td>{{id}}</td>
         <td>{{firstName}}</td>
         <td>{{lastName}}</td>
-        <td>{{id}}</td>
+        <td>{{username}}</td>
       </tr>
     {{/each}}
-    <a href="/create">Create User</a>
+    <a href="/create"><button>Create User</button></a>
 
     <form action="/user" method="post">
       <input name="userID" value="">
