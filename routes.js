@@ -9,7 +9,8 @@ module.exports = {
   addData: addData,
   user: user,
   del: del,
-  update: update
+  update: update,
+  contacts: contacts
 }
 
 function home(req, res) {
@@ -134,4 +135,13 @@ function update(req, res) {
     .catch(function (error) {
       console.log(error);
     })
+}
+
+function contacts(req, res) {
+  var model = {
+    layout: 'main',
+    title: 'Contacts'
+  }
+  res.render('contact', model)
+
 }
