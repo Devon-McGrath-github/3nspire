@@ -6,8 +6,15 @@
         <td>{{image}}<td>
         <td>{{firstName}}</td>
         <td>{{lastName}}</td>
+        <td>{{id}}</td>
       </tr>
     {{/each}}
     <a href="/create">Create User</a>
+
+    <form action="/user" method="post">
+      <input name="userID" value="">
+      <button> Get User Profile by ID</button>
+    </form>
+
   </table>
 </div>

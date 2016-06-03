@@ -6,7 +6,9 @@ module.exports = {
   home: home,
   create: create,
   addUser: addUser,
-  addData: addData
+  addData: addData,
+  user: user,
+  del: del
 }
 
 function home(req, res) {
@@ -21,8 +23,27 @@ function home(req, res) {
     })
 }
 
+function user(req, res) {
+  var user_id = req.body.userID
+  knex.select()
+    .table('users')
+    .where({
+      id: user_id
+    })
+    .then(function (data) {
+      var model = {
+        layout: 'main',
+        users: data
+      }
+      res.render('user', model)
+    })
+}
+
 function create(req, res) {
-  res.render('create')
+  var model = {
+    layout: 'main'
+  }
+  res.render('create', model)
 
 }
 
@@ -46,9 +67,10 @@ function addUser(req, res) {
   knex('users')
     .then(function (data) {
       var model = {
-        users: data
+        users: data,
+        layout: 'main'
       }
-      res.render('add', model)
+      res.render('index', model)
     })
     .catch(function (error) {
       console.error(error)
@@ -88,9 +110,23 @@ function addData(req, res) {
       var model = {
         users: data
       }
-      res.render('addData', model)
+      res.redirect('index', model)
     })
     .catch(function (error) {
       console.error(error)
+    })
+}
+
+function del(req, res) {
+  var rowID = req.body.rowID
+  console.log(rowID);
+  knex('users')
+    .where('id', rowID)
+    .del()
+    .then(function () {
+      console.log('you dont console log');
+    })
+    .catch(function (error) {
+      console.log(error);
     })
 }

@@ -24,9 +24,12 @@ app.set('views', path.join(__dirname, 'views'))
 app.get('/', routes.home)
 app.get('/create', routes.create)
 
+app.post('/user', routes.user)
+
 app.post('/add', routes.addUser)
 
 app.post('/addData', routes.addData)
+app.post('/del', routes.del)
 
 
 app.listen(PORT, function () {
